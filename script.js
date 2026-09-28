@@ -3,86 +3,88 @@ const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
+const btnReiniciar = document.getElementById("btn-reiniciar");
 
 const perguntas = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+        enunciado: "Você recebeu amigos de surpresa para o jantar e tem poucos ingredientes na geladeira. Qual é o seu primeiro passo na cozinha?",
         alternativas: [
             {
-                texto: "Isso é assustador!",
-                afirmacao: "afirmacao"
+                texto: "Criar uma receita autoral de improviso misturando temperos e o que tiver à mão.",
+                afirmacao: [
+                    "Na cozinha, você destaca sua veia criativa e intuitiva, transformando o simples em pratos surpreendentes.",
+                    "Você é um cozinheiro audacioso que confia no seu paladar para improvisar e criar novos sabores."
+                ]
             },
             {
-                texto: "Isso é maravilhoso!",
-                afirmacao: "afirmacao"
-            }           
-            
-        ]
-    },
-    {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial (IA), uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre elaIA. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de tecnologia em sala de aula. Qual atitude você toma?",
-        alternativas: [
-            {
-                texto:"Utilizar uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento",
-                afirmacao:"afirmacao"
-            },
-            {
-                texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao:"afirmacao"
+                texto: "Procurar uma receita clássica na internet ajustada estritamente aos ingredientes disponíveis.",
+                afirmacao: [
+                    "Sua abordagem culinária valoriza a precisão e o respeito às técnicas tradicionais já testadas.",
+                    "Você busca no rigor das receitas a garantia de entregar um prato perfeito e bem estruturado."
+                ]
             }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Em uma viagem para um país com cultura gastronômica totalmente exótica, qual prato você escolhe no menu?",
         alternativas: [
             {
-                texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao:"afirmacao"
+                texto: "O prato mais exótico e apimentado da casa que você nunca ouviu falar.",
+                afirmacao: "Sua curiosidade gastronômica não tem limites e você encara novos temperos como aventuras inesquecíveis."
             },
             {
-                texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao:"afirmacao"
+                texto: "Um prato local reconfortante e popular, recomendado pelo garçom da casa.",
+                afirmacao: "Você prefere vivenciar a essência do conforto local através de sabores equilibrados e acolhedores."
             }
-            
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Qual o seu tempero ou ingrediente secreto indispensável ao preparar uma grande refeição?",
         alternativas: [
             {
-                texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao:"afirmacao"
+                texto: "Ervas frescas, pimentas aromáticas e especiarias marcantes.",
+                afirmacao: "Adora camadas intensas de aroma e sabores marcantes que despertam todos os sentidos."
             },
             {
-                texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao:"afirmacao"
+                texto: "Azeite de boa qualidade, alho, cebola e uma pitada na medida certa de sal marinho.",
+                afirmacao: "Compreende que a verdadeira sofisticação reside na simplicidade e no equilíbrio dos ingredientes básicos."
             }
-            
         ]
     },
     {
-        enunciado: " Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
+        enunciado: "Ao planejar o cardápio da semana para sua casa, qual é a sua prioridade principal?",
         alternativas: [
             {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao:"afirmacao"
+                texto: "Ingredientes orgânicos, sazonais e de produtores locais focando na sustentabilidade.",
+                afirmacao: "Entende a gastronomia como um ato consciente de conexão com a natureza e com o consumo sustentável."
             },
             {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao:"afirmacao"
+                texto: "Praticidade, pratos saborosos, equilibrados e que economizem tempo de preparo.",
+                afirmacao: "Valoriza a eficiência sem abrir mão do sabor, tornando a refeição um momento prático de prazer diário."
             }
-            
-            
         ]
     },
+    {
+        enunciado: "Para fechar um grande banquete com chave de ouro, qual sobremesa representa melhor sua filosofia gastronômica?",
+        alternativas: [
+            {
+                texto: "Uma sobremesa elaborada com texturas contrastantes, como um soufflé quente com sorvete artesanal.",
+                afirmacao: "E acredita que a refeição perfeita deve terminar com uma verdadeira experiência sensorial surpreendente."
+            },
+            {
+                texto: "Um doce tradicional reconfortante, como uma boa torta de maçã ou um pudim aveludado.",
+                afirmacao: "E celebra o encerramento do banquete com o calor e o afeto das memórias afetivas da alta doceria."
+            }
+        ]
+    }
 ];
 
-let atual = 0; 
+let atual = 0;
 let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-    if(atual >= perguntas.length){
+    if (atual >= perguntas.length) {
         mostraResultado();
         return;
     }
@@ -92,26 +94,46 @@ function mostraPergunta() {
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas){
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.innerHTML = `<span>${alternativa.texto}</span> <span style="opacity: 0.6; margin-left: 10px;">➔</span>`;
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
 
-function respostaSelecionada(opcaoSelecionada){
+function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
+
+    if (Array.isArray(afirmacoes)) {
+        const afirmacaoSorteada = afirmacoes[Math.floor(Math.random() * afirmacoes.length)];
+        historiaFinal += afirmacaoSorteada + " ";
+    } else {
+        historiaFinal += afirmacoes + " ";
+    }
+
     atual++;
     mostraPergunta();
 }
 
-function mostraResultado(){
-    caixaPerguntas.textContent = "Em 2049...";
+function mostraResultado() {
+    caixaPerguntas.textContent = "No final do banquete...";
     textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = ""; 
+    caixaAlternativas.textContent = "";
+    caixaResultado.classList.add("ativo");
+    btnReiniciar.classList.add("ativo");
 }
 
+function reiniciarQuiz() {
+    atual = 0;
+    historiaFinal = "";
+    caixaResultado.classList.remove("ativo");
+    btnReiniciar.classList.remove("ativo");
+    mostraPergunta();
+}
+
+btnReiniciar.addEventListener("click", reiniciarQuiz);
+
+// Inicializa o quiz
 mostraPergunta();
